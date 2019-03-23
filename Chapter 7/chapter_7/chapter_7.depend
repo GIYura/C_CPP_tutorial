@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1551720349 source:/home/jura/C tutorial/test_C_skills/Chapter 7/chapter_7/main.c
+	<stdio.h>
+	<stdlib.h>
+

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1552485621 source:/home/jura/embedded/AVR/chapter_5/main.c
+	<stdio.h>
+	<stdlib.h>
+

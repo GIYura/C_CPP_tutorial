@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1552510168 source:/home/jura/embedded/AVR/chapter_6/main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1552933170 source:/home/jura/C tutorial/test_C_skills/Chapter 6/chapter_6/main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+

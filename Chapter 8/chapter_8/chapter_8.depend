@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1553266179 source:/home/jura/C tutorial/test_C_skills/Chapter 8/chapter_8/main.c
+	<stdio.h>
+	<stdlib.h>
+	"test.h"
+
+1553198531 source:/home/jura/C tutorial/test_C_skills/Chapter 8/chapter_8/test.c
+	<stdio.h>
+
+1553180662 /home/jura/C tutorial/test_C_skills/Chapter 8/chapter_8/test.h
+
