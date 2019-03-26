@@ -347,6 +347,35 @@ A:
     printf("%d\n", io.l);
     printf("Size of union: %d\n", sizeof(io));
 
+    typedef union{
+        struct{
+            int a:1;
+            int b:1;
+            int c:1;
+            int d:1;
+            int e:1;
+            int f:1;
+            int g:1;
+            int h:1;
+        }bF;
+        short st;
+    }TState;
+
+    TState state;
+    state.bF.a = 1;
+    state.bF.b = 1;
+    state.bF.c = 1;
+    state.bF.d = 1;
+    state.bF.e = 1;
+    state.bF.f = 1;
+    state.bF.g = 1;
+    state.bF.h = 1;
+    state.st &= ~(1 << 5);
+    state.st = 0x5555;
+    printf("%#0x", state.st);
+
+    TState state_1[5];
+    state_1[0].bF.a = 0;
 
     return 0;
 }
