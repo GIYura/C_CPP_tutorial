@@ -42,6 +42,31 @@ struct emp1{
     int len;
     char *name;
 };
+
+typedef enum{
+    MON = 0,
+    TUE,
+    WED,
+    THU,
+    FRI,
+    SAT,
+    SUN
+}Tday;
+
+struct emp4{
+        char n[20];
+        int age;
+    };
+int compareStructByValue(struct emp4, struct emp4);
+
+#pragma pack(push, 1)
+typedef struct{
+    char name[NAME_LENGTH];
+    char gender[NAME_LENGTH];
+    int age;
+}Tanimal;
+#pragma pack(pop)
+int compareStructByPointer(const Tanimal *a, const Tanimal *b);
 /*
 
 */
@@ -205,15 +230,123 @@ Q 11.12
 Point out the error, if any
 A:
 */
-    struct emp4{
-        char n[20];
-        int age;
-    };
+    printf("Q 11.12\n");
+
     struct emp4 e4 = {"VASA", 22};
     struct emp4 e5 = e4;
-    if(e4 == e5){
+    if(compareStructByValue(e4, e5) == 0){
         printf("The structs are equal\n");
     }
+
+/*
+Q 11.13
+How would u check whether the contest of 2 structs variables are same or not?
+A: int compareStruct(struct emp4 a, struct emp4 b);
+*/
+    printf("Q 11.13\n");
+
+    Tanimal *dog = (Tanimal*)malloc(sizeof *dog);
+    strcpy(dog->name, "Spike");
+    strcpy(dog->gender, "Boxer");
+    dog->age = 10;
+    printf("%s %s %d\n", dog->name, dog->gender, dog->age);
+
+    Tanimal *cat = (Tanimal*)malloc(sizeof *cat);
+    strcpy(cat->name, "Spike");
+    strcpy(cat->gender, "Boxer");
+    cat->age = 10;
+    printf("%s %s %d\n", cat->name, cat->gender, cat->age);
+
+
+    if( (compareStructByPointer(dog, cat)) == 0){
+        printf("Structs are Equal\n");
+    } else {
+        printf("Structs are NOT equal\n");
+    }
+
+    Tanimal mouse = {"Jerry", "Male", 5};
+    Tanimal bear = {"Jerry", "Male", 5};//{"Balu", "Female", 100};
+    printf("%s %s %d\n", mouse.name, mouse.gender, mouse.age);
+    printf("%s %s %d\n", bear.name, bear.gender, bear.age);
+
+    if( (compareStructByPointer(&mouse, &bear) == 0) ){
+        printf("Structs are Equal\n");
+    } else {
+        printf("Structs are NOT Equal\n");
+    }
+
+/*
+Q 11.14
+A:
+*/
+    printf("Q 11.14\n");
+
+/*
+Q 11.15
+A:
+*/
+    printf("Q 11.15\n");
+
+/*
+Q 11.16
+A:
+*/
+    printf("Q 11.16\n");
+
+/*
+Q 11.17
+Would the following program always output the size of struct as 16 bytes?
+A: NO
+*/
+    printf("Q 11.17\n");
+
+    #pragma pack(push, 1)
+    struct A{
+        char c;
+        int i;
+        long int li;
+    };
+    #pragma pack(pop)
+
+    struct A xA;
+    printf("Size of struct: %d\n", sizeof(xA));
+    printf("%d\n", sizeof(char));
+    printf("%d\n", sizeof(int));
+    printf("%d\n", sizeof(long int));
+
+/*
+Q 11.18
+What error does the following program give and what is the solution for it?
+A:
+*/
+    printf("Q 11.18\n");
+
+    struct human{
+        char name[20];
+        float sal;
+    };
+
+    struct human hh[10];
+    /*for(int i = 0; i <= 9; i++){
+        scanf("%s %f", hh[i].name, &hh[i].sal);
+    }
+
+    for(int i = 0; i <= 9; i++){
+        printf("%s %f\n", hh[i].name, hh[i].sal);
+    }*/
+
+    union U{
+        char j;
+        int l;
+    };
+
+    union U io;
+    io.j = 'A';
+    printf("%c\n", io.j);
+    io.l = 1000;
+    printf("%d\n", io.l);
+    printf("Size of union: %d\n", sizeof(io));
+
 
     return 0;
 }
@@ -236,4 +369,24 @@ TCoords getPoint(){
 void modify(struct emp *p){
     p->age = p->age + 2;
     strcpy(p->name, "Moon");
+}
+
+int compareStructByValue(struct emp4 a, struct emp4 b){
+    if(strcmp(a.n, b.n) == 0){
+        if(a.age == b.age){
+            return 0;
+        }
+    }
+    return 1;
+}
+
+int compareStructByPointer(const Tanimal *a, const Tanimal *b){
+    if(strcmp(a->name, b->name) == 0){
+        if(strcmp(a->gender, b->gender) == 0){
+            if(a->age == b->age){
+                return 0;
+            }
+        }
+    }
+    return 1;
 }
