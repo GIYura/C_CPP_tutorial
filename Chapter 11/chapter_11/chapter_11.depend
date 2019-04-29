@@ -1,5 +1,6 @@
 # depslib dependency file v1.0
-1553598720 source:/home/jura/C tutorial/test_C_skills/Chapter 11/chapter_11/main.c
+1553643007 source:/home/jura/C tutorial/test_C_skills/Chapter 11/chapter_11/main.c
+	<stdbool.h>
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

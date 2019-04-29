@@ -1,0 +1,223 @@
+#include <string.h>
+#include <stddef.h>
+#include <stdio.h>
+#include <stdbool.h>
+#define uint8_t unsigned char
+
+// дан циклический буфер и некоторые функции работы с ним
+#define BUFFER_SIZE     16
+
+#if (BUFFER_SIZE & (BUFFER_SIZE - 1)) != 0
+  #error "Incorrect buffer size"
+#endif
+
+typedef struct {
+  size_t first;
+  size_t last;
+  uint8_t data[BUFFER_SIZE];
+} CircularBuffer;
+
+// ClearBuf очищает буфер (может также использоваться для инициализации структуры CircularBuffer)
+void ClearBuf(CircularBuffer* pBuf)
+{
+  pBuf->first = 0;
+  pBuf->last = 0;
+}
+
+// ReadByte читает байт из буфера.  если в буфере нет данных, возвращает -1.
+int ReadByte(CircularBuffer* pBuf)
+{
+  if (pBuf->first == pBuf->last)
+    return -1;
+  int result = pBuf->data[pBuf->first];
+  pBuf->first = (pBuf->first + 1) & (BUFFER_SIZE - 1);
+  return result;
+}
+
+// пишет байт в буфер, возвращает true если запись прошла успешно
+bool WriteByte(CircularBuffer* pBuf, uint8_t value)
+{
+  size_t next = (pBuf->last + 1) & (BUFFER_SIZE - 1);
+  if (next == pBuf->first)
+    return false;
+  pBuf->data[pBuf->last] = value;
+  pBuf->last = next;
+  return true;
+}
+
+// функция IsEmpty возвращает true если буфер пуст, иначе false
+// пустым являтся буфер в котором нет данных для чтения.
+bool IsEmpty(CircularBuffer* pBuf)
+{
+  // TODO: напишите код этой фукнции
+  return (pBuf->first == pBuf->last) ? true : false;
+}
+
+
+// функция IsFull возвращает true если буфер полон, иначе false
+// попытка писать в полный буфер всегда будет завершаться неудачей.
+bool IsFull(CircularBuffer* pBuf)
+{
+  // TODO: напишите код этой фукнции
+  if( (pBuf->last - pBuf->first) == (BUFFER_SIZE - 1) ){
+    return true;
+  }
+  return false;
+}
+
+// что возвращает функция GetSomething? переименуйте ее, чтобы название соответствоало возвращаемому значению
+size_t GetDataAmount(CircularBuffer* pBuf)
+{
+  return (pBuf->last - pBuf->first) & (BUFFER_SIZE - 1);
+}
+
+// нам нужна фукнция для копирования данных из одного циклического буфера в другой
+// мы решили ее объявить так
+// size_t BufMove(CicrularBufffer* pDest, CicrularBufffer* pSource)
+// предполагается что pDest и pSource указывают на разные буферы
+// функция должна копировать максимально возможное кол-во байт из Source в Dest
+// и возвращать число скопированных байт.
+// т.е если в Dest буфере не хватет места для всего содержимого из Source,
+// скопироваться должны только те байты для которых есть место, остаток должен остаться в Source буфере
+// если же места хватает, то скопироваться должно все, и буфер Source остаться пуст.
+
+// программист написал вот такую фукнцию
+// соответствует ли она описаню данному выше?
+// какие у нее есть недостатки?
+size_t BufMoveSlow(CircularBuffer* pDest, CircularBuffer* pSource)
+{
+  if (pDest == pSource)
+    return 0;
+  int value;
+  size_t result = 0;
+  while ((value = ReadByte(pSource)) != -1 && WriteByte(pDest, value))
+    result++;
+  return result;
+}
+
+// напишите свой вариант функции копирования
+size_t BufMoveFast(CircularBuffer* pDest, CircularBuffer* pSource)
+{
+  // TODO: напишите код этой фукнции
+  // фнукция должна соответствовать требованиям описаным в комментарии выше
+  // для копирования данных между буферами используйте фукцнию memcpy
+  // желательно чтобы число вызовов memcpy не превышало кол-во непрерывных блоков данных, которые нужно скопировать
+  // т.е чтобы число вызовов memcpy было минимально возможным.
+    size_t szS = GetDataAmount(pSource);
+    size_t count = 0;
+    size_t result = 0;
+
+    if( !(IsEmpty(pSource)) && !(IsEmpty(pDest)) ||
+        !(IsEmpty(pSource)) && (IsEmpty(pDest)))
+    {
+        while (count++ < szS)
+        {
+            memcpy(&pDest->data[pDest->last++], &pSource->data[pSource->first++], sizeof(uint8_t));
+        }
+        result = pSource->first;
+    }
+    return result;
+}
+
+// вспомогательная функция для отладки
+void PrintBuffer(CircularBuffer* pBuf)
+{
+  if (pBuf->first == pBuf->last)
+    printf(" Empty");
+  for (size_t pos = pBuf->first; pos != pBuf->last; pos = (pos + 1) & (BUFFER_SIZE - 1))
+    printf(" %02x", pBuf->data[pos]);
+  printf("\n");
+}
+
+
+// код ниже можно менять по своему усмотрению для тестирования фукнций
+// пользуйтесь кнопкой Run для запуска и тестирования решения в CodePad'е
+
+CircularBuffer bufferA;
+CircularBuffer bufferB;
+
+CircularBuffer bufferX;
+CircularBuffer bufferY;
+
+int main(){
+
+        ClearBuf(&bufferA);
+        ClearBuf(&bufferB);
+
+        printf("1. Buffer A and B Cleared: Check Buffers\n");
+
+        if(IsEmpty(&bufferA)){
+            printf(" - Buffer A is Empty\n");
+        }
+
+        if(IsEmpty(&bufferB)){
+            printf(" - Buffer B is Empty\n");
+        }
+
+        printf("2. Buffer A and B Not Empty: Check Buffers\n");
+
+        for(int i = 0; i < BUFFER_SIZE; i++){
+            WriteByte(&bufferA, i);
+            WriteByte(&bufferB, i);
+        }
+
+        if(IsEmpty(&bufferA)){
+            printf(" - Buffer A is Empty\n");
+        } else {
+            printf(" - Buffer A is NOT Empty\n");
+        }
+
+        if(IsEmpty(&bufferB)){
+            printf(" - Buffer B is Empty\n");
+        } else {
+            printf(" - Buffer B is NOT Empty\n");
+        }
+
+        printf("3. Buffer A and B Are Full: Check Buffers\n");
+        if(IsFull(&bufferA)){
+            printf(" - Buffer A is Full\n");
+        } else {
+            printf(" - Buffer A is NOT Full\n");
+        }
+
+        if(IsFull(&bufferB)){
+            printf(" - Buffer B is Full\n");
+        } else {
+            printf(" - Buffer B is NOT Full\n");
+        }
+        printf("\n\n");
+        ClearBuf(&bufferA);
+        ClearBuf(&bufferB);
+
+        WriteByte(&bufferA, 250);
+        WriteByte(&bufferA, 251);
+        WriteByte(&bufferA, 252);
+        WriteByte(&bufferA, 253);
+        WriteByte(&bufferA, 254);
+        WriteByte(&bufferA, 255);
+
+        //for(int i = 0; i < BUFFER_SIZE; i++){
+        //    WriteByte(&bufferB, i);
+        //}
+        WriteByte(&bufferB, 1);
+        WriteByte(&bufferB, 2);
+        WriteByte(&bufferB, 3);
+
+
+        printf("BufferA before move:");
+        PrintBuffer(&bufferA);
+        printf("BufferB before move:");
+        PrintBuffer(&bufferB);
+
+        size_t res = BufMoveFast(&bufferB, &bufferA);//BufMoveSlow(&bufferB, &bufferA);
+        printf("BufMoveSlow moved %zu item(s) from BufferA to BufferB\n", res);
+
+        printf("BufferA after move:");
+        PrintBuffer(&bufferA);
+        printf("BufferB after move:");
+        PrintBuffer(&bufferB);
+
+
+
+  return 0;
+}

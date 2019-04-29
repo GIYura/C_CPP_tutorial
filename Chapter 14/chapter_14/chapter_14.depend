@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1555253043 source:/home/jura/C tutorial/test_C_skills/Chapter 14/chapter_14/main.c
+	<stdio.h>
+	<stdlib.h>
+	<limits.h>
+	<stdbool.h>
+

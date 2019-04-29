@@ -1,12 +1,14 @@
 /*
 Chapter 11 - Structures, Unions, Enumerations
 */
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 #define POINTS_NUMBER   10
 #define NAME_LENGTH     32
+#define DATA_LENGTH     16
 
 typedef struct{
     int x;
@@ -67,6 +69,16 @@ typedef struct{
 }Tanimal;
 #pragma pack(pop)
 int compareStructByPointer(const Tanimal *a, const Tanimal *b);
+
+typedef struct{
+    int last;
+    int first;
+    int data[DATA_LENGTH];
+}Tdata;
+
+void clearData(Tdata *);
+void copyData(Tdata *, Tdata *);
+bool writeData(Tdata *, int);
 /*
 
 */
@@ -372,10 +384,39 @@ A:
     state.bF.h = 1;
     state.st &= ~(1 << 5);
     state.st = 0x5555;
-    printf("%#0x", state.st);
+    printf("%#0x\n\n", state.st);
 
     TState state_1[5];
     state_1[0].bF.a = 0;
+
+    Tdata A1;
+    Tdata A2;
+
+    clearData(&A1);
+    clearData(&A2);
+
+    for(int i = 0; i < DATA_LENGTH; i++){
+        writeData(&A1, i);
+    }
+
+    for(int i = 0; i < 10; i++){
+        printf("%d ", A1.data[i]);
+    }
+    printf("\n");
+    copyData(&A2, &A1);
+
+    for(int i = 0; i < 10; i++){
+        printf("%d ", A1.data[i]);
+    }
+    printf("\n\n\n");
+
+    Tperson MAN1 = {"David", "Bing"};
+    Tperson MAN2;
+
+    printf("%s %s\n", MAN1.fName, MAN1.lName);
+
+    MAN2 = MAN1;
+    printf("%s %s\n", MAN2.fName, MAN2.lName);
 
     return 0;
 }
@@ -418,4 +459,24 @@ int compareStructByPointer(const Tanimal *a, const Tanimal *b){
         }
     }
     return 1;
+}
+
+void copyData(Tdata *dest, Tdata *src){
+    for(int i = 0; i < DATA_LENGTH; i++){
+        memcpy(&dest->data[dest->last++], &src->data[src->first++], sizeof(int));
+    }
+}
+
+void clearData(Tdata *p){
+    p->first = 0;
+    p->last = 0;
+}
+
+bool writeData(Tdata *p, int val){
+    int next = (p->last + 1) & (DATA_LENGTH - 1);
+    if (next == p->first)
+        return false;
+    p->data[p->last] = val;
+    p->last = next;
+    return true;
 }
