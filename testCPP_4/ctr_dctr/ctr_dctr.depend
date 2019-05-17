@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1557957053 source:/home/jura/c_tutorial/C_CPP_tutorial/testCPP_4/ctr_dctr/main.cpp
+	<iostream>
+	"Queue.h"
+
+1557957121 source:/home/jura/c_tutorial/C_CPP_tutorial/testCPP_4/ctr_dctr/src/Queue.cpp
+	"Queue.h"
+	<iostream>
+
+1557956413 /home/jura/c_tutorial/C_CPP_tutorial/testCPP_4/ctr_dctr/include/Queue.h
+

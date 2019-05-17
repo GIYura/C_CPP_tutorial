@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1553181646 source:/home/jura/C tutorial/test_C_skills/testCPP/main.cpp
+	<iostream>
+
+1557865553 source:/home/jura/c_tutorial/C_CPP_tutorial/testCPP/src/Person.cpp
+	"Person.h"
+
+1557865503 /home/jura/c_tutorial/C_CPP_tutorial/testCPP/include/Person.h
+	<string>
+
+1557865576 source:/home/jura/c_tutorial/C_CPP_tutorial/testCPP/main.cpp
+	<iostream>
+	"Person.h"
+
+1557866188 source:/home/jura/c_tutorial/C_CPP_tutorial/testCPP/src/Emploee.cpp
+	"Emploee.h"
+
+1557866111 /home/jura/c_tutorial/C_CPP_tutorial/testCPP/include/Emploee.h
+	"Person.h"
+
+1557865951 source:/home/jura/c_tutorial/C_CPP_tutorial/testCPP/src/Employer.cpp
+	"Employer.h"
+
+1557865951 /home/jura/c_tutorial/C_CPP_tutorial/testCPP/include/Employer.h
+

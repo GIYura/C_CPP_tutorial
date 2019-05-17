@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1557955376 source:/home/jura/c_tutorial/C_CPP_tutorial/testCPP_3/access/main.cpp
+	<iostream>
+	"MyClass.h"
+
+1557955302 /home/jura/c_tutorial/C_CPP_tutorial/testCPP_3/access/include/MyClass.h
+
+1557955549 source:/home/jura/c_tutorial/C_CPP_tutorial/testCPP_3/access/src/MyClass.cpp
+	"MyClass.h"
+	<iostream>
+
