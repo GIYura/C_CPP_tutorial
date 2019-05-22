@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1558558101 source:/home/jura/c_tutorial/C_CPP_tutorial/testCPP_9/constructor_overload/main.cpp
+	<iostream>
+	<ctime>
+
