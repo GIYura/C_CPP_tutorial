@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1560001636 source:/home/jura/c_tutorial/C_CPP_tutorial/c_prata/chapter_3/platinum/main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+
