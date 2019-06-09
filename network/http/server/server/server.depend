@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1560086404 source:/home/jura/c_tutorial/C_CPP_tutorial/network/http/server/server/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<sys/socket.h>
+	<sys/types.h>
+	<netinet/in.h>
+	<unistd.h>
+
