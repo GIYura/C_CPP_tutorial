@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1560202934 source:/home/jura/c_tutorial/C_CPP_tutorial/ringBuffer/ringBuffer/main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdint.h>
+	<stdbool.h>
+	<assert.h>
+
