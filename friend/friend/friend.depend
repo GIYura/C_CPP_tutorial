@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1560895459 source:/home/jura/c_tutorial/C_CPP_tutorial/friend/friend/main.cpp
+	<iostream>
+
+1560896053 source:/home/jura/c_tutorial/C_CPP_tutorial/friend/friend/src/A.cpp
+	"A.h"
+
+1560896112 /home/jura/c_tutorial/C_CPP_tutorial/friend/friend/include/A.h
+
