@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1562189349 source:/home/jura/c_tutorial/C_CPP_tutorial/test/static/static/src/Test.cpp
+	"Test.h"
+	<iostream>
+
+1562189218 /home/jura/c_tutorial/C_CPP_tutorial/test/static/static/include/Test.h
+
+1562188981 source:/home/jura/c_tutorial/C_CPP_tutorial/test/static/static/main.cpp
+	<iostream>
+	"Test.h"
+
