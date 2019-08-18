@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1565532302 source:/home/jura/c_tutorial/C_CPP_tutorial/#c_prata/string/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
