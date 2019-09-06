@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1566125714 source:/home/jura/c_tutorial/C_CPP_tutorial/#simple_code/lessons/_6/Coffee/main.cpp
+	<iostream>
+
+1567369321 source:/home/jura/c_tutorial/C_CPP_tutorial/#simple_code/!_lessons/_6#77/Coffee/main.cpp
+	<iostream>
+	<cstring>
+

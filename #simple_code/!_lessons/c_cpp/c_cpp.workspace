@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="c_cpp" Database="" Version="10.0.0">
+  <Project Name="friend_class" Path="../../friend_class/friend_class/friend_class.project" Active="No"/>
+  <Project Name="qtc_model" Path="qtc_model/qtc_model.project" Active="No"/>
+  <Project Name="InnnerClass" Path="InnnerClass/InnnerClass.project" Active="No"/>
+  <Project Name="Time" Path="Time/Time.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Environment/>
+      <Project Name="copy_cnstr" ConfigName="Debug"/>
+      <Project Name="friend_class" ConfigName="Debug"/>
+      <Project Name="qtc_model" ConfigName="Debug"/>
+      <Project Name="InnnerClass" ConfigName="Debug"/>
+      <Project Name="Time" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Environment/>
+      <Project Name="copy_cnstr" ConfigName="Release"/>
+      <Project Name="friend_class" ConfigName="Release"/>
+      <Project Name="qtc_model" ConfigName="Release"/>
+      <Project Name="InnnerClass" ConfigName="Release"/>
+      <Project Name="Time" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>

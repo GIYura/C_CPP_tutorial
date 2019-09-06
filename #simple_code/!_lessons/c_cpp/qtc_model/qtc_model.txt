@@ -1,0 +1,1 @@
+./Debug/main.cpp.o ./Debug/Singleton.cpp.o ./Debug/Rx.cpp.o ./Debug/Tx.cpp.o
