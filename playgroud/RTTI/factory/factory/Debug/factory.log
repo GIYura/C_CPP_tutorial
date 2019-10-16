@@ -1,0 +1,4 @@
+﻿  factory.cpp
+C:\Users\jglot\Desktop\cpp\playgroud\RTTI\factory\factory\factory.cpp(63,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\jglot\Desktop\cpp\playgroud\RTTI\factory\factory\factory.cpp(59): warning C4715:  'factory': not all control paths return a value
+  factory.vcxproj -> C:\Users\jglot\Desktop\cpp\playgroud\RTTI\factory\Debug\factory.exe

@@ -1,0 +1,7 @@
+﻿  foreach.cpp
+C:\Users\jglot\Desktop\cpp\playgroud\STL\foreach\foreach\foreach.cpp(31,40): warning C4305:  'initializing': truncation from 'double' to '_Ty'
+C:\Users\jglot\Desktop\cpp\playgroud\STL\foreach\foreach\foreach.cpp(31,40): warning C4305:         with
+C:\Users\jglot\Desktop\cpp\playgroud\STL\foreach\foreach\foreach.cpp(31,40): warning C4305:         [
+C:\Users\jglot\Desktop\cpp\playgroud\STL\foreach\foreach\foreach.cpp(31,40): warning C4305:             _Ty=float
+C:\Users\jglot\Desktop\cpp\playgroud\STL\foreach\foreach\foreach.cpp(31,40): warning C4305:         ]
+  foreach.vcxproj -> C:\Users\jglot\Desktop\cpp\playgroud\STL\foreach\Debug\foreach.exe

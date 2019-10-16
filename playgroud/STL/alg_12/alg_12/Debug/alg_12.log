@@ -1,0 +1,3 @@
+﻿  alg_12.cpp
+C:\Users\jglot\Desktop\cpp\playgroud\STL\alg_12\alg_12\alg_12.cpp(45,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  alg_12.vcxproj -> C:\Users\jglot\Desktop\cpp\playgroud\STL\alg_12\Debug\alg_12.exe

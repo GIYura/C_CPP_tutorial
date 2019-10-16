@@ -1,0 +1,3 @@
+﻿  bitset.cpp
+C:\Users\jglot\Desktop\cpp\playgroud\STL\bitset\bitset\bitset.cpp(43,20): warning C4018:  '<': signed/unsigned mismatch
+  bitset.vcxproj -> C:\Users\jglot\Desktop\cpp\playgroud\STL\bitset\Debug\bitset.exe
