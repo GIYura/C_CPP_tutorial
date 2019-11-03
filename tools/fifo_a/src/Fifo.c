@@ -26,7 +26,7 @@ fifo_status_t fifo_clear(fifo_t* fifo){
 }
 
 //
-fifo_status_t fifo_push(fifo_t* fifo, uint8_t data){
+fifo_status_t fifo_push(fifo_t* fifo, uint8_t* data){
     assert(fifo);
     if(FIFO_IS_FULL(fifo)){
         return FIFO_ERROR;

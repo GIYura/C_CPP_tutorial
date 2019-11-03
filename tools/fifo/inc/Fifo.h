@@ -3,7 +3,7 @@
 
 #include "Porting.h"
 
-#define FIFO_SIZE 0
+#define FIFO_SIZE 16
 
 typedef struct {
     uint8_t buffer[FIFO_SIZE];
@@ -19,7 +19,7 @@ typedef enum{
 
 fifo_status_t fifo_init(fifo_t* fifo, uint16_t sz);
 fifo_status_t fifo_clear(fifo_t* fifo);
-fifo_status_t fifo_push(fifo_t* fifo, uint8_t data);
+fifo_status_t fifo_push(fifo_t* fifo, uint8_t* data);
 fifo_status_t fifo_pop(fifo_t* fifo, uint8_t* data);
 
 #endif//__FIFO_H

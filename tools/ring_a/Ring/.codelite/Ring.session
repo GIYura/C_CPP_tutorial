@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Session Name="/home/jura/c_tutorial/C_CPP_tutorial/tools/ring_a/Ring/Ring.workspace">
+  <int Value="2" Name="m_selectedTab"/>
+  <wxString Value="/home/jura/c_tutorial/C_CPP_tutorial/tools/ring_a/Ring/Ring.workspace" Name="m_workspaceName"/>
+  <TabInfoArray Name="TabInfoArray">
+    <TabInfo>
+      <wxString Value="/home/jura/c_tutorial/C_CPP_tutorial/tools/ring_a/inc/Ring.h" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="6" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/jura/c_tutorial/C_CPP_tutorial/tools/ring_a/Ring/main.c" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="12" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/home/jura/c_tutorial/C_CPP_tutorial/tools/ring_a/src/Ring.c" Name="FileName"/>
+      <int Value="24" Name="FirstVisibleLine"/>
+      <int Value="18" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+  </TabInfoArray>
+  <SerializedObject Name="m_breakpoints">
+    <long Value="0" Name="Count"/>
+  </SerializedObject>
+</Session>

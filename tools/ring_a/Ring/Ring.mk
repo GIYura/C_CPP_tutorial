@@ -3,10 +3,10 @@
 ## any manual changes will be erased      
 ##
 ## Debug
-ProjectName            :=Fifo
+ProjectName            :=Ring
 ConfigurationName      :=Debug
-WorkspacePath          :=/home/jura/c_tutorial/C_CPP_tutorial/tools/fifo_a
-ProjectPath            :=/home/jura/c_tutorial/C_CPP_tutorial/tools/fifo_a/Fifo
+WorkspacePath          :=/home/jura/c_tutorial/C_CPP_tutorial/tools/ring_a/Ring
+ProjectPath            :=/home/jura/c_tutorial/C_CPP_tutorial/tools/ring_a/Ring
 IntermediateDirectory  :=./Debug
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
@@ -32,7 +32,7 @@ Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E 
-ObjectsFileList        :="Fifo.txt"
+ObjectsFileList        :="Ring.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=mkdir -p
 LinkOptions            :=  
@@ -60,7 +60,7 @@ AS       := as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IntermediateDirectory)/up_src_Fifo.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IntermediateDirectory)/up_src_Ring.c$(ObjectSuffix) 
 
 
 
@@ -92,20 +92,20 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/main.c$(ObjectSuffix): main.c $(IntermediateDirectory)/main.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "/home/jura/c_tutorial/C_CPP_tutorial/tools/fifo_a/Fifo/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IncludePath)
+	$(CC) $(SourceSwitch) "/home/jura/c_tutorial/C_CPP_tutorial/tools/ring_a/Ring/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.c$(DependSuffix): main.c
 	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.c$(ObjectSuffix) -MF$(IntermediateDirectory)/main.c$(DependSuffix) -MM main.c
 
 $(IntermediateDirectory)/main.c$(PreprocessSuffix): main.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.c$(PreprocessSuffix) main.c
 
-$(IntermediateDirectory)/up_src_Fifo.c$(ObjectSuffix): ../src/Fifo.c $(IntermediateDirectory)/up_src_Fifo.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "/home/jura/c_tutorial/C_CPP_tutorial/tools/fifo_a/src/Fifo.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/up_src_Fifo.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/up_src_Fifo.c$(DependSuffix): ../src/Fifo.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/up_src_Fifo.c$(ObjectSuffix) -MF$(IntermediateDirectory)/up_src_Fifo.c$(DependSuffix) -MM ../src/Fifo.c
+$(IntermediateDirectory)/up_src_Ring.c$(ObjectSuffix): ../src/Ring.c $(IntermediateDirectory)/up_src_Ring.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/home/jura/c_tutorial/C_CPP_tutorial/tools/ring_a/src/Ring.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/up_src_Ring.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/up_src_Ring.c$(DependSuffix): ../src/Ring.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/up_src_Ring.c$(ObjectSuffix) -MF$(IntermediateDirectory)/up_src_Ring.c$(DependSuffix) -MM ../src/Ring.c
 
-$(IntermediateDirectory)/up_src_Fifo.c$(PreprocessSuffix): ../src/Fifo.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/up_src_Fifo.c$(PreprocessSuffix) ../src/Fifo.c
+$(IntermediateDirectory)/up_src_Ring.c$(PreprocessSuffix): ../src/Ring.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/up_src_Ring.c$(PreprocessSuffix) ../src/Ring.c
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

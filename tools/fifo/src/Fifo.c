@@ -24,12 +24,12 @@ fifo_status_t fifo_clear(fifo_t* fifo){
 }
 
 //
-fifo_status_t fifo_push(fifo_t* fifo, uint8_t data){
+fifo_status_t fifo_push(fifo_t* fifo, uint8_t* data){
     assert(fifo);
     if(FIFO_IS_FULL(fifo)){
         return FIFO_ERROR;
     }
-    fifo->buffer[fifo->head] = data;
+    fifo->buffer[fifo->head] = *data;
     fifo->head = FIFO_NEXT_HEAD(fifo);
     return FIFO_OK;
 }

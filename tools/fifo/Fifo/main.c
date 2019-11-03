@@ -18,7 +18,9 @@ int main(int argc, char **argv)
 	if(m_fifo_status){ ERROR_HANDLER(); }
 	
 	for(int i = 0; i < 20; i++){
-		m_fifo_status = fifo_push(&m_fifo, i);
+		uint8_t l_t[1];
+		l_t[0] = i;
+		m_fifo_status = fifo_push(&m_fifo, l_t);
 		if(m_fifo_status){ break; }
 	}
 	
