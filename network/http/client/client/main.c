@@ -24,8 +24,8 @@ int main(int argc, char* argv[])
 
     struct sockaddr_in remoteAddr;
     remoteAddr.sin_family = AF_INET;
-    remoteAddr.sin_port = htons(80);
-    inet_aton(addr, &remoteAddr.sin_addr.s_addr);
+    remoteAddr.sin_port = htons(8090);
+    inet_aton(addr, &remoteAddr.sin_addr);
 
     connect(clientSocket, (struct sockaddr*) &remoteAddr, sizeof(remoteAddr));
 

@@ -24,7 +24,7 @@ int main()
 
     int connStatus = connect(netSocket, (struct sockaddr*)&serverAddr, sizeof(serverAddr));
     if(!connStatus){
-        //printf("Can't connect to server\r\n");
+        printf("Can't connect to server\r\n");
     }
 
     // receive data form server

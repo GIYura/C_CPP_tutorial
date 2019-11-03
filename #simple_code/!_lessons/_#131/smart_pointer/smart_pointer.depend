@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1569356311 source:/home/jura/c_tutorial/C_CPP_tutorial/#simple_code/!_lessons/_#131/smart_pointer/main.cpp
+	<iostream>
+	<memory>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1568841836 source:/home/jura/c_tutorial/C_CPP_tutorial/#simple_code/!_lessons/_#120/exeption/main.cpp
+	<iostream>
+	<fstream>
+	<exception>
+
